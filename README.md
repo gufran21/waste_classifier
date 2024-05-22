@@ -18,6 +18,8 @@ Real-Time Processing: Quick and accurate classification results are provided in 
 ### Data Acquisition
 The waste images for this project were sourced from multiple locations to ensure a diverse dataset. Primarily, images were obtained from Kaggle datasets, which provided a substantial collection of labeled waste images. Additionally, further images were scraped from Google and other online sources to augment the dataset and enhance the classifier's accuracy.
 
+[dataset kaggle link](https://www.kaggle.com/datasets/gufranamu/waste-dataset)
+
 ### Data Preprocessing
 #### Data Augmentation
 Data augmentation is a technique used to artificially increase the training set by creating modified copies of a dataset using existing data. This includes making minor changes to the dataset or using deep learning to generate new data points, thereby improving the model's robustness and performance.
