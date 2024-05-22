@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/c43c657c77.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waste Classifier</title>
+    <meta
+      name="keywords"
+      content=""
+    />
+
+    <meta name="title" content="" />
+    <meta
+      name="description"
+      content=""
+    />
+    <meta name="author" href="" content="" />
+    <meta
+      property="og:description"
+    />
+  
+
+    <title>Waste Classifier</title>
+
+    <!-- font awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
+    <!-- animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+
+    <!--css files-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/mobile-style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/particles.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}" />
+
+    <!--google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Poppins|Roboto|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="hero-section" class="section hero-section">
+      <div id="particles-js" class="particles">
+        <nav class="navbar">
+          <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
+            <i class="fa fa-bars"></i>
+          </label>
+          <input type="checkbox" id="chkToggle" />
+          <ul class="main-nav" id="js-menu">
+           
+            <li>
+              <a href="#themes-section" class="nav-links">Waste Categories</a>
+            </li>
+            <li>
+              <a href="#about" class="nav-links">Try Model</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="hackrcdu">
+          <h1 class="animated flipInX">
+
+          </h1>
+          <h3>An AI Based Waste Classifier</h>
+          <h5>
+            Build using Deep Learning Model
+          </h5>
+        </div>
+        <div class="illustration animated slideInRight">
+          <img
+            class="hero-img"
+            width="600px"
+            src="{{url_for('static',filename='assets/waste_.png')}}"
+            class=""
+            alt=""
+          />
+        </div>
+      </div>
+    </header>
+
+    <section id="themes-section" class="section themes-section">
+      <h1 class="animated flip delay-2s">Waste Categories_</h1>
+      <div class="theme-cards">
+        <div class="theme-card card-recyclable">
+          <i class="fa-solid fa-recycle animated bounceIn delay-2s"></i>
+          <h3>RECYCLABLE</h3>
+        </div>
+        <div class="theme-card card-biodegradable">
+          <i class="fa-solid fa-tree animated bounceIn delay-2s"></i>
+          <h3>BIODEGRADABLE</h3>
+        </div>
+        <div class="theme-card card-hazardous">
+          <i class="fa-solid fa-skull-crossbones bounceIn delay-2s"></i>
+          <h3>HAZARDOUS</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section themes-section">
+      <h1 class="animated flip delay-2s">CNN BASED MODEL_</h1>
+      <div class="theme-cards">
+        <div class="form-container">
+
+          <!-- FORM STARTS-->
+            <form>
+          
+            <label class="custom-file-input">
+            <span class="custom-file-input-label">Choose File</span>
+            <input type="file" name="img" id="uploaded_image" onchange="img_show(this.files)">
+    
+          </label>
+          <label class="custom-file-input">
+            <button class="custom-file-input-label" type="button" onclick="open_camera()">camera</button>
+           </label>
+            <div class="illustration animated slideInRight">
+              <img id="input"
+                width="500px"
+                src="{{url_for('static',filename='assets/2.gif')}}"
+                class=""
+                alt=""
+              />
+             <button id="predict"  class="custom-file-input form-image" type="button" onclick="predict_img()">Predict</button>
+            </div>
+             </form>
+             <!--FORM ENDS HERE-->
+            
+          
+    
+    
+             </div>
+      </div>
+    </section>
+
+    <section id="about-section" class="section themes-section">
+      <h1 class="animated flip delay-2s">RESULT</h1>
+      <div id="output">
+      <div id="out_img_box">
+      <img src="" id="out_img" >
+      <img src="" id="arrow">
+      <img src="" id="dustbin">
+      </div>
+      <div id="out_text"></div>
+    </div>
+    </section>
+
+   
+    <footer id="footer" class="footer">
+      <div class="footer-contact">
+        <h4><u>For any query contact us:</u></h4>
+        <h4>
+          Farhan Khan<br />
+          Gufran Ahmad<br />
+        </h4>
+      </div>
+      <h4>
+        Built with <i class="fas fa-code"></i> and
+        <i class="fas fa-heart"></i> by
+        <a href="https://www.linkedin.com/in/farhan-khan-382422243/"
+          ><span>Farhan Khan</span></a
+        >
+      </h4>
+    </footer>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
+    <!-- JavaScript Files -->
+    
+    <script src="{{url_for('static',filename='js/particles.js')}}"></script>
+    <script src="{{url_for('static',filename='js/api.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.24/webcam.js"></script>
+  </body>
+</html>
